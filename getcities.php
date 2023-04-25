@@ -18,14 +18,16 @@ try {
     
     //  TO-DO: MAKE THE CITIES DISPLAY AS A DROP-DOWN MENU BEFORE SUBMISSION
     
-    echo "<ul>";
+echo "<select>";
 
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
-            echo "<li>" . $row["city_name"] . "</li>";
+            echo "<option value ='city_name'>" . $row["city_name"] . "</option>";
+            echo "<br>";
         }
     }
+    echo "</select>";
     echo "</ul>";
     $conn->close();
 } catch (Exception $ex) {
